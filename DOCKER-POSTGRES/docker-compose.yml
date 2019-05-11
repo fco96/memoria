@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    container_name: "memoria_pg"
+    environment:
+      POSTGRES_PASSWORD: abc123
+      TZ: America/Santiago
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+      - ./db_carpeta_compartida:/carpeta_compartida
+    ports:
+      - 5432:5432
