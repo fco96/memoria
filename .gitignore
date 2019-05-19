@@ -43,6 +43,4 @@ package-lock.json
 geckodriver.log
 
 # Datasets
-dispositivos-renam.csv
-mediciones-netatmo-renam.csv
-mediciones_unificadas.csv
+datasets/*
