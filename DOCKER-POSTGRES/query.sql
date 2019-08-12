@@ -39,5 +39,5 @@ SELECT interior.dispositivo_id, interior.vivienda_id, interior.temperatura as te
 interior.co2, interior.ruido, exterior.temperatura as temperatura_exterior, exterior.humedad as humedad_exterior, interior.measured_at, interior.date_measured_at
 FROM mediciones_netatmo interior
 INNER JOIN mediciones_netatmo exterior ON ((interior.measured_at = exterior.measured_at) AND (interior.vivienda_id = exterior.vivienda_id))
-WHERE interior.sector = FALSE AND exterior.sector = TRUE AND interior.temperatura is not NULL
+WHERE interior.sector = FALSE AND exterior.sector = TRUE AND interior.temperatura is not NULL AND interior.vivienda_id is not NULL AND exterior.vivienda_id is not NULL
 ORDER BY date_measured_at ASC;
